@@ -40,6 +40,7 @@ namespace LoggingKata
             ITrackable name2 = null;
             double dist = 0;
             double currentdist = 0;
+
             foreach (var locA in locations)
             {
                 
@@ -57,19 +58,20 @@ namespace LoggingKata
 
                    dist = CorA.GetDistanceTo(CorB);
 
-                    if (dist > currentdist)
+                    if (currentdist < dist)
                     {
                         name1 = locA;
                         name2 = locB;
+                        currentdist = dist;
                     }
 
 
-
+                   
 
 
                 }
-                currentdist = dist;
 
+                
 
 
             }
